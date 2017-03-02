@@ -47,6 +47,23 @@ def move():
     }
 
 
+
+
+# Assortment of Wall Code 
+
+# Checks if desired coordinate is a wall -- https://github.com/jennifertigner/battlesnake-2016/blob/master/app/main.py
+def isWall(data, coord):
+    #check if coord is out of bounds
+    if coord[0] < 0 or coord[1] < 0:
+        return True
+    elif coord[0] >= data['width'] or coord[1] >= data['height']:
+        return True
+    else:
+return False
+
+
+
+
 # Expose WSGI app (so gunicorn can find it)
 application = bottle.default_app()
 if __name__ == '__main__':

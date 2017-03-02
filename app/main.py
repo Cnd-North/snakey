@@ -1,9 +1,5 @@
 # Group Snake Project
 
-
-# The link is example code of a python snake with decent commenting:
-# https://github.com/zevisert/battlesnake2016/blob/master/app/main.py
-
 import bottle
 import os
 import random

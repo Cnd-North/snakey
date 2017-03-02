@@ -1,3 +1,7 @@
+# Group Snake Project
+
+
+
 import bottle
 import os
 import random

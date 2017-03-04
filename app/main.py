@@ -103,7 +103,7 @@ def move():
 	printg(grid)
 	sys.stdout.flush()
 
-	mynakeHead = data['coords'[0]
+	mynakeHead = data['coords'][0]
 	mysnakeCoords = mysnake['coords']
 
 	foodList = sorted(data['food'], key = lambda p: distance(p, mysnakeHead))

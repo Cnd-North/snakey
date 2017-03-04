@@ -59,7 +59,7 @@ def init(data):
 
 	
 	for foods in data['food']:
-		grid[foods[0]][f[1]] = FOOD
+		grid[foods[0]][foods[1]] = FOOD
 
 	return grid, mysnake
 

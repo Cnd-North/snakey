@@ -50,10 +50,10 @@ def printg(grid):
 #map fill
 def init(data):
 	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
-	mys = 0	
+	myS = 0	
 	for s in data['snakes']:
 		if s['id'] == OURID:
-			mys = S
+			myS = S
 		for coord in s['coords']:
 			grid[coord[0]][coord[1]] = SNAKE
 

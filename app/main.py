@@ -10,7 +10,7 @@ import math
 import copy
 import sys
 
-OURID = 0
+OURID = ''
 SNAKE = 1
 FOOD = 2
 SAFENODE = 3
@@ -52,7 +52,9 @@ def printg(grid):
 #map fill
 def init(data):
 	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
-	myS = ''	
+	myS = ''
+	print "************************"
+	print OURID
 	for s in data['snakes']:
 		print "snake id's"
 		print s['id']

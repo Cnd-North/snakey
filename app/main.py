@@ -101,6 +101,7 @@ def move():
 	grid, mysnake = init(data)
 	
 	printg(grid)
+	sys.stdout.flush()
 
 	mynakeHead = data['coords'[0]
 	mysnakeCoords = mysnake['coords']
@@ -110,18 +111,22 @@ def move():
 	path = None
 	for food in foodList:
 		print food
+		sys.stdout.flush()
 		path = a_star(mysnake, food, grid, mysnakeCoords)	
 		if path:
 			print food
+			sys.stdout.flush()
 			break
 
 			
 	print "PATH"
 	print path
+	sys.stdout.flush()
 	dir = direction(path[0], path[1])
 	
 
 	print dir
+	sys.stdout.flush()
     return {
         'move': dir,
         'taunt': 'battlesnake-python!'

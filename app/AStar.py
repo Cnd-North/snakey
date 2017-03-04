@@ -53,6 +53,10 @@ def a_star(start, goal, grid, tail):
     came_from = {} #empty map
 
     g_score = [[10000 for x in xrange(len(grid[y]))] for y in xrange(len(grid))]
+	
+	print "******** * * * * * *************"
+	print (g_score[start[0]][start[1]])
+
     g_score[start[0]][start[1]] = 0
 
     f_score = [[10000 for x in xrange(len(grid[y]))] for y in xrange(len(grid))]

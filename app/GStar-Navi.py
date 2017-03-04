@@ -24,7 +24,7 @@ xC = 0
 # Initializing count variable for Y column
 # yC = 0
 
-head = coords[1][1]
+head = coords[1]
 print head
 
 
@@ -46,7 +46,7 @@ for l1, l2 in zip(coords, coords[1:]):
 # (Step 0): Get head of snake
 
 
-head = (coords[0:0])
+head = (coords[0])
 print 'head:', head
 
 

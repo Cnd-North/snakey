@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-##
-=======
+
+
 #cole_test_push
->>>>>>> 3a6c8237376a49ea3d2fe858e6bb7df357525c36
+
 #
 #Code referenced from https://github.com/noahspriggs/battlesnake-python/blob/master/app/main.py
 from AStar import *
@@ -102,6 +101,7 @@ def move():
 	print "Hello world"
 	data = bottle.request.json
 	OURID = getID(data)
+	
 	
 	grid, mysnake = init(data)
 	

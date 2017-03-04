@@ -105,6 +105,8 @@ def move():
 	printg(grid)
 	sys.stdout.flush()
 
+	print mysnake
+
 	mysnakeHead = mysnake['coords'][0]
 	mysnakeCoords = mysnake['coords']
 

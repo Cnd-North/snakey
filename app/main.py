@@ -83,7 +83,8 @@ def direction(start, dest):
 	
 
 
-def getID(data)nake = init(data)
+def getID(data)
+	snake = init(data)
 	id = data['you']
 	return id
 

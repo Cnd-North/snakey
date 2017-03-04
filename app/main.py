@@ -11,8 +11,8 @@ import copy
 import sys
 
 SNAKE = 1
-FOOD = 2
-SAFENODE = 3
+FOOD = 3
+SAFENODE = 5
 
 
 @bottle.route('/static/<path:path>')
@@ -129,7 +129,7 @@ def move():
 		print food
 		sys.stdout.flush()
 		path = a_star(mysnakeHead, food, grid, mysnakeCoords)	
-		if path:
+		if path != None:
 			print food
 			sys.stdout.flush()
 			break

@@ -100,11 +100,17 @@ def move():
 	data = bottle.request.json
 	OURID = getID(data)
 	
+	print "this is our snake ID"
+	print OURID
+	print "*********************"
+
 	grid, mysnake = init(data)
 	
 	printg(grid)
 	sys.stdout.flush()
+	
 
+	print "mysnake arr"
 	print mysnake
 
 	mysnakeHead = mysnake['coords'][0]

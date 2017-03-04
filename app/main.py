@@ -8,7 +8,7 @@ import random
 import math
 import copy
 
-OURID
+OURID = 0
 SNAKE = 1
 FOOD = 2
 SAFENODE = 3

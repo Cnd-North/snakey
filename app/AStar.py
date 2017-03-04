@@ -54,7 +54,7 @@ def a_star(start, goal, grid, tail):
 
     g_score = [[10000 for x in xrange(len(grid[y]))] for y in xrange(len(grid))]
 	g_score[start[0]][start[1]] = 0
-
+	
     f_score = [[10000 for x in xrange(len(grid[y]))] for y in xrange(len(grid))]
     f_score[start[0]][start[1]] = dist(start,goal)
 

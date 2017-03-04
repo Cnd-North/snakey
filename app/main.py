@@ -7,6 +7,7 @@ import os
 import random
 import math
 import copy
+import sys
 
 OURID = 0
 SNAKE = 1

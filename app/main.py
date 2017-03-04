@@ -52,7 +52,7 @@ def printg(grid):
 #map fill
 def init(data):
 	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
-	myS = 0	
+	myS = ''	
 	for s in data['snakes']:
 		print "snake id's"
 		print s['id']

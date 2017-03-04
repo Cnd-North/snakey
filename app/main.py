@@ -72,7 +72,7 @@ def init(data, thisID):
 
 def direction(start, dest):
 	dx = start[0] - dest[0]
-	dy = start[0] - dest[0]
+	dy = start[1] - dest[1]
 
 	if dx == 1:
 		return 'left'

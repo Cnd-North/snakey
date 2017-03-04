@@ -1,4 +1,4 @@
-#
+##
 #
 #Code referenced from https://github.com/noahspriggs/battlesnake-python/blob/master/app/main.py
 from AStar import *

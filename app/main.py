@@ -10,7 +10,6 @@ import math
 import copy
 import sys
 
-OURID = ''
 SNAKE = 1
 FOOD = 2
 SAFENODE = 3
@@ -50,15 +49,14 @@ def printg(grid):
 
 #initialize grid data
 #map fill
-def init(data):
+def init(data, thisID):
 	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
-	myS = ''
 	print "************************"
-	print OURID
+	print thisID
 	for s in data['snakes']:
 		print "snake id's"
 		print s['id']
-		if s['id'] == OURID:
+		if s['id'] == thisID:
 			print "FOUND OUR SNAKE"
 			myS = s
 			print s
@@ -112,7 +110,7 @@ def move():
 	print OURID
 	print "*********************"
 
-	grid, mysnake = init(data)
+	grid, mysnake = init(data, OURID)
 	
 	printg(grid)
 	sys.stdout.flush()

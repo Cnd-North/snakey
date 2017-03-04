@@ -81,10 +81,10 @@ def direction(start, dest):
 		return 'right'
 
 	elif dy == -1:
-		return 'up'
+		return 'down'
 	
 	elif dy == 1:
-		return 'down'
+		return 'up'
 	
 
 

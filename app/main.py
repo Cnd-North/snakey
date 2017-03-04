@@ -127,7 +127,9 @@ def move():
 
 	print dir
 	sys.stdout.flush()
-    return {
+
+
+	return {
         'move': dir,
         'taunt': 'battlesnake-python!'
     }

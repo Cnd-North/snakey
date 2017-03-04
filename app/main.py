@@ -53,7 +53,7 @@ def init(data):
 	
 	for s in data['snakes']:
 		if s['id'] == OURID:
-			mysnake = s
+			mys = S
 		for coord in s['coords']:
 			grid[coord[0]][coord[1]] = SNAKE
 
@@ -61,7 +61,7 @@ def init(data):
 	for foods in data['food']:
 		grid[foods[0]][foods[1]] = FOOD
 
-	return grid, mysnake
+	return grid, myS
 
 def direction(start, dest):
 	dx = start[0] - dest[0]

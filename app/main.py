@@ -93,11 +93,11 @@ def distance(p, q):
 
 @bottle.post('/move')
 def move():
-	directions = ['up', 'down', 'left', 'right']
-    data = bottle.request.json
+
+	print "Hello world"
+	data = bottle.request.json
 	OURID = getID(data)
 	
-
 	grid, mysnake = init(data)
 	
 	printg(grid)

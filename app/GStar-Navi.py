@@ -45,7 +45,7 @@ for l1, l2 in zip(coords, coords[1:]):
 # (Step 0): Get head of snake
 
 
-head = (coords[0:0])
+head = (coords[0])
 print 'head:', head
 
 
@@ -76,8 +76,13 @@ for l1, l2 in zip(coords, coords[1:]):
 print 'p1:', p1, 'p2:', p2, 'endP:', endP
 
 
+#v1 = (p1-p2)
+#print 'v1:', v1
 
 
+[p1 - p2 for (p1, p2) in zip(p1[:], p2[:])]
+v1 = p1 - p2
+print 'v1:', v1[:]
 
 
 	

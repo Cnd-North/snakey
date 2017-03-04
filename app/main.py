@@ -128,7 +128,7 @@ def move():
 	for food in foodList:
 		print food
 		sys.stdout.flush()
-		path = a_star(mysnake, food, grid, mysnakeCoords)	
+		path = a_star(mysnakeHead, food, grid, mysnakeCoords)	
 		if path:
 			print food
 			sys.stdout.flush()

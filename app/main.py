@@ -54,6 +54,8 @@ def init(data):
 	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
 	myS = 0	
 	for s in data['snakes']:
+		print "snake id's"
+		print s['id']
 		if s['id'] == OURID:
 			print "FOUND OUR SNAKE"
 			myS = s

@@ -1,8 +1,17 @@
-# Group Snake Project
-
+#
+#
+#Code referenced from https://github.com/noahspriggs/battlesnake-python/blob/master/app/main.py
+from AStar import *
 import bottle
 import os
 import random
+import math
+import copy
+
+OURID
+SNAKE = 1
+FOOD = 2
+SAFENODE = 3
 
 
 @bottle.route('/static/<path:path>')
@@ -32,34 +41,91 @@ def start():
     }
 
 
+#prints grid
+def printg(grid):
+	for x in grid:
+		print x
+
+#initialize grid data
+#map fill
+def init(data):
+	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
+	
+	for s in data['snakes']:
+		if s['id'] == OURID:
+			mysnake = s
+		for coord in s['coords']:
+			grid[coord[0]][coord[1]] = SNAKE
+
+	
+	for foods in data['food']:
+		grid[foods[0]][f[1]] = FOOD
+
+	return grid, mysnake
+
+def direction(start, dest):
+	dx = start[0] - dest[0]
+	dy = start[0] - dest[0]
+
+	if dx == 1:
+		return 'east'
+	
+	elif dx == -1:
+		return 'west'
+
+	elif dy == -1:
+		return 'north'
+	
+	elif dy == 1:
+		return 'south'
+	
+
+
+def getID(data):
+	id = data['you']
+	return id
+
+def distance(p, q):
+	dx = abs(p[0] - q[0])
+	dy = abs(p[1] - q[1])
+	ans = dx + dy
+	return ans
+
 @bottle.post('/move')
 def move():
+	directions = ['up', 'down', 'left', 'right']
     data = bottle.request.json
+	OURID = getID(data)
+	
 
-    # TODO: Do things with data
-    directions = ['up', 'down', 'left', 'right']
+	grid, mysnake = init(data)
+	
+	printg(grid)
 
+	mynakeHead = data['coords'[0]
+	mysnakeCoords = mysnake['coords']
+
+	foodList = sorted(data['food'], key = lambda p: distance(p, mysnakeHead))
+	
+	path = None
+	for food in foodList:
+		print food
+		path = a_star(mysnake, food, grid, mysnakeCoords)	
+		if path:
+			print food
+			break
+
+			
+	print "PATH"
+	print path
+	dir = direction(path[0], path[1])
+	
+
+	print dir
     return {
-        'move': random.choice(directions),
-        'taunt': 'let\'s rumble!!!!!'
+        'move': dir,
+        'taunt': 'battlesnake-python!'
     }
-
-
-
-
-# Assortment of Wall Code 
-
-# Checks if desired coordinate is a wall -- https://github.com/jennifertigner/battlesnake-2016/blob/master/app/main.py
-def isWall(data, coord):
-    #check if coord is out of bounds
-    if coord[0] < 0 or coord[1] < 0:
-        return True
-    elif coord[0] >= data['width'] or coord[1] >= data['height']:
-        return True
-    else:
-return False
-
-
 
 
 # Expose WSGI app (so gunicorn can find it)

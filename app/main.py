@@ -39,7 +39,7 @@ def start():
         'color': '#00FF00',
         'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
         'head_url': head_url,
-        'name': 'battlesnake-python'
+        'name': 'YES DADDY!'
     }
 
 
@@ -55,7 +55,7 @@ def init(data):
 	myS = 0	
 	for s in data['snakes']:
 		if s['id'] == OURID:
-			myS = S
+			myS = s
 		for coord in s['coords']:
 			grid[coord[0]][coord[1]] = SNAKE
 
@@ -70,20 +70,20 @@ def direction(start, dest):
 	dy = start[0] - dest[0]
 
 	if dx == 1:
-		return 'east'
+		return 'left'
 	
 	elif dx == -1:
-		return 'west'
+		return 'right'
 
 	elif dy == -1:
-		return 'north'
+		return 'up'
 	
 	elif dy == 1:
-		return 'south'
+		return 'down'
 	
 
 
-def getID(data):
+def getID(data)nake = init(data)
 	id = data['you']
 	return id
 

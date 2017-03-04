@@ -55,7 +55,10 @@ def init(data):
 	myS = 0	
 	for s in data['snakes']:
 		if s['id'] == OURID:
+			print "FOUND OUR SNAKE"
 			myS = s
+			print s
+
 		for coord in s['coords']:
 			grid[coord[0]][coord[1]] = SNAKE
 
@@ -99,7 +102,7 @@ def move():
 
 	print "Hello world"
 	data = bottle.request.json
-	OURID = getID(data)
+	OURID = data['you']
 	
 	print "this is our snake ID"
 	print OURID

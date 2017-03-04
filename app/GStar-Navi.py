@@ -77,8 +77,19 @@ for l1, l2 in zip(coords, coords[1:]):
 print 'p1:', p1, 'p2:', p2, 'endP:', endP
 
 
+# (Step 2): Determining the vectors from the bends in the snake
+print 'head:', head
 
+v1 = [head - p1 for head, p1 in zip(head, p1)]
+print 'v1:', v1
 
+head = (coords[0])
+print 'head:', head
+
+v2 = [head - p2 for head, p2 in zip(head, p2)]
+print 'v2:', v2
+
+head = (coords[0])
 
 
 	

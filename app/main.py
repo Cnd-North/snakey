@@ -1,7 +1,4 @@
 
-
-#cole_test_push
-
 #
 #Code referenced from https://github.com/noahspriggs/battlesnake-python/blob/master/app/main.py
 from AStar import *
@@ -12,10 +9,9 @@ import math
 import copy
 import sys
 
-OURID = 0
 SNAKE = 1
-FOOD = 2
-SAFENODE = 3
+FOOD = 3
+SAFENODE = 5
 
 
 @bottle.route('/static/<path:path>')
@@ -41,7 +37,7 @@ def start():
         'color': '#00FF00',
         'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
         'head_url': head_url,
-        'name': 'battlesnake-python'
+        'name': 'yes daddy'
     }
 
 
@@ -52,12 +48,18 @@ def printg(grid):
 
 #initialize grid data
 #map fill
-def init(data):
+def init(data, thisID):
 	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
-	myS = 0	
+	print "************************"
+	print thisID
 	for s in data['snakes']:
-		if s['id'] == OURID:
-			myS = S
+		print "snake id's"
+		print s['id']
+		if s['id'] == thisID:
+			print "FOUND OUR SNAKE"
+			myS = s
+			print s
+
 		for coord in s['coords']:
 			grid[coord[0]][coord[1]] = SNAKE
 
@@ -69,23 +71,24 @@ def init(data):
 
 def direction(start, dest):
 	dx = start[0] - dest[0]
-	dy = start[0] - dest[0]
+	dy = start[1] - dest[1]
 
 	if dx == 1:
-		return 'east'
+		return 'left'
 	
 	elif dx == -1:
-		return 'west'
+		return 'right'
 
 	elif dy == -1:
-		return 'north'
+		return 'down'
 	
 	elif dy == 1:
-		return 'south'
+		return 'up'
 	
 
 
 def getID(data):
+	snake = init(data)
 	id = data['you']
 	return id
 
@@ -100,13 +103,25 @@ def move():
 
 	print "Hello world"
 	data = bottle.request.json
-	OURID = getID(data)
+	OURID = data['you']
 	
+<<<<<<< HEAD
 	
 	grid, mysnake = init(data)
+=======
+	print "this is our snake ID"
+	print OURID
+	print "*********************"
+
+	grid, mysnake = init(data, OURID)
+>>>>>>> 498d17c007eadac86ee1d139fb9b59a50779b3a4
 	
 	printg(grid)
 	sys.stdout.flush()
+	
+
+	print "mysnake arr"
+	print mysnake
 
 	mysnakeHead = mysnake['coords'][0]
 	mysnakeCoords = mysnake['coords']
@@ -117,8 +132,8 @@ def move():
 	for food in foodList:
 		print food
 		sys.stdout.flush()
-		path = a_star(mysnake, food, grid, mysnakeCoords)	
-		if path:
+		path = a_star(mysnakeHead, food, grid, mysnakeCoords)	
+		if path != None:
 			print food
 			sys.stdout.flush()
 			break

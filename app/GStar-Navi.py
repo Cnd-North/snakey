@@ -14,7 +14,8 @@ xC = 0
 # Initializing count variable for Y column
 yC = 0
 
-
+head = coords[1][1]
+print head
 
 
 # For loop working through a snakes array of values to find the 'kinks'

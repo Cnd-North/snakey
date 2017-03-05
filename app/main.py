@@ -105,16 +105,14 @@ def move():
 	data = bottle.request.json
 	OURID = data['you']
 	
-<<<<<<< HEAD
-	
+
 	grid, mysnake = init(data)
-=======
 	print "this is our snake ID"
 	print OURID
 	print "*********************"
 
 	grid, mysnake = init(data, OURID)
->>>>>>> 498d17c007eadac86ee1d139fb9b59a50779b3a4
+
 	
 	printg(grid)
 	sys.stdout.flush()
@@ -137,7 +135,8 @@ def move():
 			print food
 			sys.stdout.flush()
 			break
-
+		if path == None:
+			path = escape()
 			
 	print "PATH"
 	print path
